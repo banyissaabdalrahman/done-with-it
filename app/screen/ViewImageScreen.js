@@ -1,24 +1,28 @@
 import React from "react";
 import { StyleSheet, View, Image, Platform, StatusBar } from "react-native";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
+import colors from "../config/colors";
 const ViewImageScreen = () => (
   <View style={styles.root}>
     <View style={styles.container}>
       <StatusBar barStyle={"light-content"} />
-      <View
-        style={{
-          backgroundColor: "#fc5c65",
-          width: 75,
-          height: 75,
-        }}
-      />
-      <View
-        style={{
-          backgroundColor: "#4ECDC4",
-          width: 75,
-          height: 75,
-        }}
-      />
+      <View>
+        <MaterialCommunityIcons
+          style={styles.icon}
+          name="close"
+          size={50}
+          color={colors.white}
+        />
+      </View>
+      <View>
+        <MaterialCommunityIcons
+          style={styles.icon}
+          name="trash-can-outline"
+          size={50}
+          color={colors.white}
+        />
+      </View>
     </View>
     <Image
       style={{
@@ -37,8 +41,8 @@ const styles = StyleSheet.create({
     backgroundColor: "black",
     flexDirection: "row",
     justifyContent: "space-between",
-    paddingLeft: 10,
-    paddingRight: 10,
+    paddingLeft: 20,
+    paddingRight: 20,
     paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 20,
   },
   image: {
@@ -48,6 +52,10 @@ const styles = StyleSheet.create({
   root: {
     flex: 1,
     backgroundColor: "black",
+  },
+  icon: {
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
 
