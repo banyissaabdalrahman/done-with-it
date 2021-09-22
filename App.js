@@ -5,23 +5,22 @@ import DetailsScreen from "./app/screen/DetailsScreen";
 import AppCard from "./app/components/AppCard";
 import WelcomeScreen from "./app/screen/WelcomeScreen";
 import ViewImageScreen from "./app/screen/ViewImageScreen";
+import ListItem from "./app/components/ListItem";
+
 function App(props) {
   return (
-    // <DetailsScreen
-    //   image={require("./app/assets/jacket.jpg")}
-    //   title="Red jacket for sale"
-    //   subTitle="$100"
-    //   dealerPhoto={require("./app/assets/profilepic.jpg")}
-    //   dName="Abdalrhman Banyissa"
-    //   iQuantity="5"
-    // />
+    <DetailsScreen
+      image={require("./app/assets/jacket.jpg")}
+      title="Red jacket for sale"
+      subTitle="$100"
+    />
     // <AppCard
     //   image={require("./app/assets/jacket.jpg")}
     //   title="Red jacket for sale"
     //   subTitle="$100"
     // />
     // <ViewImageScreen />
-    <WelcomeScreen />
+    // <WelcomeScreen />
   );
 }
 
