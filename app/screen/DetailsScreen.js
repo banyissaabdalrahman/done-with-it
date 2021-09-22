@@ -2,14 +2,8 @@ import React from "react";
 import { View, StyleSheet, Image, Text } from "react-native";
 
 import colors from "../config/colors";
-function DetailsScreen({
-  image,
-  title,
-  subTitle,
-  dealerPhoto,
-  dName,
-  iQuantity,
-}) {
+import ListItem from "../components/ListItem";
+function DetailsScreen({ image, title, subTitle }) {
   return (
     <View style={styles.container}>
       <Image style={styles.img} source={image} />
@@ -17,13 +11,16 @@ function DetailsScreen({
         <Text style={styles.title}>{title}</Text>
         <Text style={styles.subTitle}>{subTitle}</Text>
       </View>
-      <View style={styles.dealerInformationContainer}>
-        <Image style={styles.dealer} source={dealerPhoto} />
-        <View style={styles.dealerInformation}>
-          <Text style={styles.dealerName}>{dName}</Text>
-          <Text style={styles.itemsQuantity}>{iQuantity}</Text>
-        </View>
-      </View>
+      <ListItem
+        image={require("../assets/profilepic.jpg")}
+        title="Abdalrhman Banyissa"
+        subTitle="5 Listing"
+      />
+      <ListItem
+        image={require("../assets/mosh.jpg")}
+        title="Mosh Hamadani"
+        subTitle="3 Listing"
+      />
     </View>
   );
 }
@@ -50,26 +47,6 @@ const styles = StyleSheet.create({
     color: colors.secondary,
     fontWeight: "bold",
     fontSize: 24,
-  },
-  dealer: {
-    width: 100,
-    height: 100,
-    borderRadius: 50,
-    left: 20,
-  },
-  dealerInformationContainer: {
-    flexDirection: "row",
-  },
-  dealerInformation: {
-    left: 30,
-    justifyContent: "center",
-  },
-  dealerName: {
-    fontSize: 18,
-  },
-  itemsQuantity: {
-    fontSize: 16,
-    color: colors.medium,
   },
 });
 
